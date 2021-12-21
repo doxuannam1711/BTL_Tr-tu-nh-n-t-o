@@ -6,6 +6,8 @@ var board, body,options,horse,count=0,choice;
             for (let i = 0; i < 8; i++) {
                 l.push([0,0,0,0,0,0,0,0]);
             }
+            console.log("Ham l:");
+            console.log(l);
             //Vẽ bàn cờ trên trang html 
             window.onload = function() {
                 choice = document.getElementById("choice");
@@ -15,7 +17,8 @@ var board, body,options,horse,count=0,choice;
                 board.style.height=board.style.width=Math.min(body.offsetHeight, body.offsetWidth)-10 +"px";
                 for (let i = 0; i < 8; i++) {
                     for (let j = 0; j < 8; j++) {
-                        board.innerHTML+=`<div class = "block" style="top:${i*12.5}%;left:${j*12.5}%;background-color:${(i+j)%2==1?"green":"white"};"></div>`
+                        board.innerHTML+=`<div class = "block" style="top:${i*12.5}%;left:${j*12.5}%;
+                        background-color:${(i+j)%2==1?"green":"white"};"></div>`
                     }
                     board.innerHTML+=`<div class = "options" onclick = "MoveHorse(${i});"></div>`;
                 }
@@ -95,12 +98,13 @@ var board, body,options,horse,count=0,choice;
                     l[pos[1]][pos[0]]=3;
                     AddUsed(pos);
                     var move = [(pos[0]%2 ? pos[0]-1 : pos[0]+1), pos[1]%4<2 ? pos[1]+2 : pos[1]-2];
-                    console.log("In o day");
-                    console.log(pos[0],pos[1]);
+
+                    console.log("Vi tri nuoc di cua nguoi choi chon:");
+                    console.log(pos[1],pos[0]);
                     
-                    console.log("In o day nhung la cua move");
-                    console.log(move[0],move[1]);
-                    console.log(l[move[1]][move[0]]);
+                    console.log("Vi tri nuoc di cua AI (Uu tien nuoc di toi uu):");
+                    console.log(move[1],move[0]);
+                    console.log(l[move[1]][move[0]]);   
 
 
                     if (l[move[1]][move[0]]==3) {//bằng 3 tức kà AI không còn nước đi tối ưu
@@ -145,6 +149,10 @@ var board, body,options,horse,count=0,choice;
                 pos = optionsList[n];
                 l[pos[1]][pos[0]]=2;
                 UseInfo(initial);
+
+                console.log("Ham l cua vi tri hien tai:");
+                console.log(l);
+
                 AI();
             }
 
