@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bitter&family=Mochiy+Pop+P+One&family=Roboto:wght@400;700&display=swap');
+
+body 
+{
+    
+    top: -10px;
+    left: -10px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Bitter', serif;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+*{
+    position:absolute;
+    user-select: none;
+}
+#board{
+    border: 5px solid black;
+    top: 0;
+    left: 0;
+}
+.block {
+    height: 12.5%;
+    width: 12.5%;
+}
+#horse {
+    position: absolute;
+    z-index: 10;
+    height: 12.5%;
+    width: 12.5%;
+    background-image: url(HorseChessIcon.png);
+    background-position: center;
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    transition: 0.15s linear;
+}
+
+#choice {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(63, 140, 212, 0.5);
+    z-index: 20;
+    transition: 1s;
+}
+#q {
+    top: calc(50vh - 150px);
+    color: black;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    width: 100vw;
+}
+.btn {
+    top: calc(50vh);
+    width: calc(50vw - 20px);
+    background-color: purple;
+    height: 60px;
+    text-align: center;
+    font-size: 35px;
+    line-height: 60px;
+    font-weight: 900;
+}
+#me {
+    left: 10px;
+}
+#AI {
+    left: calc(50vw + 10px);
+}
+.options { 
+    z-index: 10;
+    display: none;
+    height: 12.5%;
+    width: 12.5%;
+    background-color: rgb(26, 183, 204);
+    opacity: 0.7;
+    animation: OptionAnim 1s linear 0s infinite;
+} 
+@keyframes OptionAnim { 
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0.2;}
+}
+.used { /*Màu của ô đã đi qua rồi*/
+    background-color: rgba(125,20,20,0.7);
+    height: 12.5%;
+    width: 12.5%;
+}
+
+#final { /*Màu thông báo khi kết thúc trò chơi*/
+    color: white;
+    font-size: 60px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    line-height: 100vh;
+    text-align: center;
+    font-weight: 900;
+}
+#rules-page {
+    /* top: 0;
+    left: 0; */
+    
+    border: solid 5px black;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    z-index: 20;
+    transition: 0.3s;
+}
+#rp-heading {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 0;
+    width: 100vw;
+    height: 50px;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 900;
+    text-align: center;
+}
+#back {
+    /* top: 0;
+    right: 0; */   
+    
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 37px;
+    font-size: 25px;
+    background-color: lightcoral;   
+}
+.outside-back{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100vw;  
+}
+#rp-rules {
+   
+    position: relative;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: calc(100vw - 10px);
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+}

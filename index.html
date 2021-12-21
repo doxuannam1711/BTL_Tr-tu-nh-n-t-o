@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BTL Trí Tuệ Nhân Tạo</title>
+</head>
+<body>
+    <div id="board">
+        <div id="horse"></div>
+    </div>
+
+    <div id="choice">
+        <div id="q">Chọn người đi trước:</div>
+        <div id="me" class="btn" onclick="Choose(0);">Player</div>
+        <div id="AI" class="btn" onclick="Choose(1);">AI</div>
+    </div>
+
+    
+    <div id="rules-page">
+        <div id="rp-heading">LUẬT</div>
+        
+        <div id="rp-rules">
+            Lần lượt chuyển quân mã cùng AI, mỗi ô chỉ có thể đi qua một lần.<br/>Người chơi thua khi hết nước để di chuyển.<br/>Hãy chiến thắng AI 
+        </div>
+        <div class="outside-back">
+            <div id="back" onclick="document.getElementById('rules-page').style.top='100vh';">OK</div>
+        </div>
+        
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
